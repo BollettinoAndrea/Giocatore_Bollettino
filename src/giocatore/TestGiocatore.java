@@ -3,41 +3,65 @@ package giocatore;
 import java.util.Scanner;
 
 public class TestGiocatore {
+    static Giocatore[] gt = new Giocatore[100];
+
     public static void main(String[] args) {
+        Scanner t = new Scanner(System.in);
+        int indice = 0;
+        int ind = 0;
+        int gol_fatti;
+        String nome;
+        Boolean capitano;
+        do {
+            System.out.println("1 - Aggiungi un giocatore alla Squadra. ");
+            System.out.println("2 - Visualizza i giocatori della Squadra. ");
+            System.out.println("3 - Modifica i dati di un giocatore. ");
+            System.out.println("4 - Svincola dalla Squadra. ");
+            System.out.println("5 - Visualizzare i giocatori che hanno realizzato più di 5 goal. ");
+            System.out.println("6 - visualizzare capitano della Squadra. ");
+            System.out.println("7 - Assegna il capitano in modo casuale. ");
+            System.out.println("8 - ESCI. ");
+            ind = t.nextInt();
 
-        Scanner in = new Scanner(System.in);
+            switch (ind) {
+                case 1:
+                    System.out.println("dammi nome");
+                    nome = t.nextLine();
+                    System.out.println("dammi numero goal");
+                    gol_fatti = t.nextInt();
+                    System.out.println("dimmi se è capitano");
+                    capitano = t.nextBoolean();
+                    aggiuntaGiocatore(nome, gol_fatti, capitano, indice);
+                    indice++;
+                    break;
+                case 2:
 
-        Giocatore g1 = new Giocatore();
-        System.out.println("GIOCATORE 1:");
-        System.out.println("nome: "); g1.setNome(in.next());
-        System.out.println("è il capitano? (true/false): "); g1.setCapitano(in.nextBoolean());
-        System.out.println("gol fatti: "); g1.setGol_fatti(in.nextInt());
+                    break;
+                case 3:
 
-        Giocatore g2 = new Giocatore();
-        System.out.println("GIOCATORE 2:");
-        System.out.println("nome: "); g2.setNome(in.next());
-        System.out.println("è il capitano? (true/false): "); g2.setCapitano(in.nextBoolean());
-        System.out.println("gol fatti: "); g2.setGol_fatti(in.nextInt());
+                    break;
+                case 4:
 
-        Giocatore g3 = new Giocatore();
-        System.out.println("GIOCATORE 3:");
-        System.out.println("nome: "); g3.setNome(in.next());
-        System.out.println("è il capitano? (true/false): "); g3.setCapitano(in.nextBoolean());
-        System.out.println("gol fatti: "); g3.setGol_fatti(in.nextInt());
+                    break;
+                case 5:
 
-        Giocatore maxGoal = g1;
+                    break;
+                case 6:
 
-        if (g2.getGol_fatti() > maxGoal.getGol_fatti()) {
-            maxGoal = g2;
-        }
-        if (g3.getGol_fatti() > maxGoal.getGol_fatti()) {
-            maxGoal = g3;
-        }
+                    break;
+                case 7:
 
-        System.out.println("Giocatore con più goal:");
-        System.out.println("Nome: " + maxGoal.getNome());
-        System.out.println("Capitano: " + (maxGoal.isCapitano() ? "Sì" : "No"));
-        System.out.println("Goal: " + maxGoal.getGol_fatti());
+                    break;
+                case 8:
+
+                    break;
+
+            }
+        } while (ind != 8);
+    }
+
+    public static void aggiuntaGiocatore(String name, int gol, Boolean cap, int indice) {
+        gt[indice] = new Giocatore();
 
     }
 }
