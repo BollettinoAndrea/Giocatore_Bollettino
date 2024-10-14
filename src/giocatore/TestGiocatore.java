@@ -21,7 +21,10 @@ public class TestGiocatore {
             System.out.println("6 - visualizzare capitano della Squadra. ");
             System.out.println("7 - Assegna il capitano in modo casuale. ");
             System.out.println("8 - ESCI. ");
+            System.out.println(" ");
+            System.out.println("Inserisci comando: ");
             ind = t.nextInt();
+            t.nextLine();
 
             switch (ind) {
                 case 1:
@@ -29,13 +32,13 @@ public class TestGiocatore {
                     nome = t.nextLine();
                     System.out.println("dammi numero goal");
                     gol_fatti = t.nextInt();
-                    System.out.println("dimmi se è capitano");
+                    System.out.println("dimmi se è capitano (true / false): ");
                     capitano = t.nextBoolean();
                     aggiuntaGiocatore(nome, gol_fatti, capitano, indice);
                     indice++;
                     break;
                 case 2:
-
+                    visualizzaGiocatori();
                     break;
                 case 3:
 
@@ -62,6 +65,16 @@ public class TestGiocatore {
 
     public static void aggiuntaGiocatore(String name, int gol, Boolean cap, int indice) {
         gt[indice] = new Giocatore();
+        gt[indice].setNome(name);
+        gt[indice].setGol_fatti(gol);
+        gt[indice].setCapitano(cap);
+    }
 
+    public static void visualizzaGiocatori() {
+        for (Giocatore g : gt) {
+            if (g != null) {
+                System.out.println("Nome: " + g.getNome() + ", Gol: " + g.getGol_fatti() + ", Capitano: " + g.isCapitano());
+            }
+        }
     }
 }
