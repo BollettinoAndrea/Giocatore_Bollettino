@@ -47,7 +47,7 @@ public class TestGiocatore {
 
                     break;
                 case 5:
-
+                    visualizzaGiocatoriPiuGol();
                     break;
                 case 6:
 
@@ -74,6 +74,14 @@ public class TestGiocatore {
         for (Giocatore g : gt) {
             if (g != null) {
                 System.out.println("Nome: " + g.getNome() + ", Gol: " + g.getGol_fatti() + ", Capitano: " + g.isCapitano());
+            }
+        }
+    }
+
+    public static void visualizzaGiocatoriPiuGol() {
+        for (Giocatore g : gt) {
+            if (g != null && g.getGol_fatti() > 5) {
+                System.out.println("Nome: " + g.getNome() + ", Gol: " + g.getGol_fatti());
             }
         }
     }
