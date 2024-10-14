@@ -6,7 +6,7 @@ public class TestGiocatore {
     static Giocatore[] gt = new Giocatore[100];
 
     public static void main(String[] args) {
-        Scanner t = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         int indice = 0;
         int ind = 0;
         int gol_fatti;
@@ -23,17 +23,17 @@ public class TestGiocatore {
             System.out.println("8 - ESCI. ");
             System.out.println(" ");
             System.out.println("Inserisci comando: ");
-            ind = t.nextInt();
-            t.nextLine();
+            ind = in.nextInt();
+            in.nextLine();
 
             switch (ind) {
                 case 1:
                     System.out.println("Dammi il nome:");
-                    nome = t.nextLine();
+                    nome = in.nextLine();
                     System.out.println("Dammi il numero di goal:");
-                    gol_fatti = t.nextInt();
+                    gol_fatti = in.nextInt();
                     System.out.println("Dimmi se è capitano (true/false):");
-                    capitano = t.nextBoolean();
+                    capitano = in.nextBoolean();
                     Metodi.aggiuntaGiocatore(nome, gol_fatti, capitano, indice);
                     indice++;
                     break;
@@ -41,10 +41,14 @@ public class TestGiocatore {
                     Metodi.visualizzaGiocatori();
                     break;
                 case 3:
-
+                    System.out.println("Inserisci l'indice del giocatore da modificare:");
+                    int indModifica = in.nextInt();
+                    Metodi.modificaGiocatore(indModifica);
                     break;
                 case 4:
-
+                    System.out.println("Inserisci l'indice del giocatore da svincolare:");
+                    int indSvincola = in.nextInt();
+                    Metodi.svincolaGiocatore(indSvincola);
                     break;
                 case 5:
                     Metodi.visualizzaGiocatoriPiuGol();

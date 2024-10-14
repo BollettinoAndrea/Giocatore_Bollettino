@@ -1,5 +1,7 @@
 package giocatore;
 
+import java.util.Scanner;
+
 public class Metodi {
     static Giocatore[] gt = new Giocatore[100];
 
@@ -26,5 +28,32 @@ public class Metodi {
         }
     }
 
+    public static void modificaGiocatore(int indice) {
+        Scanner in = new Scanner(System.in);
+        if (gt[indice] != null) {
+            System.out.println("Modifica nome:");
+            String nuovoNome = in.nextLine();
+            System.out.println("Modifica gol:");
+            int nuoviGol_fatti = in.nextInt();
+            System.out.println("Modifica stato capitano (true/false):");
+            boolean nuovoCapitano = in.nextBoolean();
+
+            gt[indice].setNome(nuovoNome);
+            gt[indice].setGol_fatti(nuoviGol_fatti);
+            gt[indice].setCapitano(nuovoCapitano);
+
+        } else {
+            System.out.println("Giocatore non trovato.");
+        }
+    }
+
+    public static void svincolaGiocatore(int indice) {
+        if (gt[indice] != null) {
+            gt[indice] = null;
+            System.out.println("Giocatore svincolato.");
+        } else {
+            System.out.println("Giocatore non trovato.");
+        }
+    }
 
 }
