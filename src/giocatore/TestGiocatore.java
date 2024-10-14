@@ -1,5 +1,6 @@
 package giocatore;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class TestGiocatore {
@@ -17,8 +18,8 @@ public class TestGiocatore {
             System.out.println("2 - Visualizza i giocatori della Squadra. ");
             System.out.println("3 - Modifica i dati di un giocatore. ");
             System.out.println("4 - Svincola dalla Squadra. ");
-            System.out.println("5 - Visualizzare i giocatori che hanno realizzato più di 5 goal. ");
-            System.out.println("6 - visualizzare capitano della Squadra. ");
+            System.out.println("5 - Visualizza i giocatori che hanno realizzato più di 5 goal. ");
+            System.out.println("6 - Visualizza capitano della Squadra. ");
             System.out.println("7 - Assegna il capitano in modo casuale. ");
             System.out.println("8 - ESCI. ");
             System.out.println(" ");
@@ -54,13 +55,13 @@ public class TestGiocatore {
                     Metodi.visualizzaGiocatoriPiuGol();
                     break;
                 case 6:
-
+                    Metodi.visualizzaCapitano();
                     break;
                 case 7:
-
+                    Metodi.assegnaCapitanoCasuale();
                     break;
                 case 8:
-
+                    System.out.println("Uscita");
                     break;
 
             }

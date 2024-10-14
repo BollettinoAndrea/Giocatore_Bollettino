@@ -1,5 +1,6 @@
 package giocatore;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Metodi {
@@ -16,14 +17,6 @@ public class Metodi {
         for (Giocatore g : gt) {
             if (g != null) {
                 System.out.println("Nome: " + g.getNome() + ", Gol: " + g.getGol_fatti() + ", Capitano: " + g.isCapitano());
-            }
-        }
-    }
-
-    public static void visualizzaGiocatoriPiuGol() {
-        for (Giocatore g : gt) {
-            if (g != null && g.getGol_fatti() > 5) {
-                System.out.println("Nome: " + g.getNome() + ", Gol: " + g.getGol_fatti());
             }
         }
     }
@@ -53,6 +46,37 @@ public class Metodi {
             System.out.println("Giocatore svincolato.");
         } else {
             System.out.println("Giocatore non trovato.");
+        }
+    }
+
+    public static void visualizzaGiocatoriPiuGol() {
+        for (Giocatore g : gt) {
+            if (g != null && g.getGol_fatti() > 5) {
+                System.out.println("Nome: " + g.getNome() + ", Gol: " + g.getGol_fatti());
+            }
+        }
+    }
+
+    public static void visualizzaCapitano() {
+        for (Giocatore g : gt) {
+            if (g != null && g.isCapitano()) {
+                System.out.println("Il capitano è: " + g.getNome());
+                return;
+            }
+        }
+        System.out.println("Nessun capitano assegnato.");
+    }
+
+    public static void assegnaCapitanoCasuale() {
+        Random random = new Random();
+        int capitanoAssegnato = -1;
+        while (capitanoAssegnato == -1) {
+            int indice = random.nextInt(gt.length);
+            if (gt[indice] != null) {
+                gt[indice].setCapitano(true);
+                capitanoAssegnato = indice;
+                System.out.println("Il nuovo capitano è: " + gt[indice].getNome());
+            }
         }
     }
 
