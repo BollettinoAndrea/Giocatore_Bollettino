@@ -28,17 +28,17 @@ public class TestGiocatore {
 
             switch (ind) {
                 case 1:
-                    System.out.println("dammi nome");
+                    System.out.println("Dammi il nome:");
                     nome = t.nextLine();
-                    System.out.println("dammi numero goal");
+                    System.out.println("Dammi il numero di goal:");
                     gol_fatti = t.nextInt();
-                    System.out.println("dimmi se è capitano (true / false): ");
+                    System.out.println("Dimmi se è capitano (true/false):");
                     capitano = t.nextBoolean();
-                    aggiuntaGiocatore(nome, gol_fatti, capitano, indice);
+                    Metodi.aggiuntaGiocatore(nome, gol_fatti, capitano, indice);
                     indice++;
                     break;
                 case 2:
-                    visualizzaGiocatori();
+                    Metodi.visualizzaGiocatori();
                     break;
                 case 3:
 
@@ -47,7 +47,7 @@ public class TestGiocatore {
 
                     break;
                 case 5:
-                    visualizzaGiocatoriPiuGol();
+                    Metodi.visualizzaGiocatoriPiuGol();
                     break;
                 case 6:
 
@@ -63,26 +63,4 @@ public class TestGiocatore {
         } while (ind != 8);
     }
 
-    public static void aggiuntaGiocatore(String name, int gol, Boolean cap, int indice) {
-        gt[indice] = new Giocatore();
-        gt[indice].setNome(name);
-        gt[indice].setGol_fatti(gol);
-        gt[indice].setCapitano(cap);
-    }
-
-    public static void visualizzaGiocatori() {
-        for (Giocatore g : gt) {
-            if (g != null) {
-                System.out.println("Nome: " + g.getNome() + ", Gol: " + g.getGol_fatti() + ", Capitano: " + g.isCapitano());
-            }
-        }
-    }
-
-    public static void visualizzaGiocatoriPiuGol() {
-        for (Giocatore g : gt) {
-            if (g != null && g.getGol_fatti() > 5) {
-                System.out.println("Nome: " + g.getNome() + ", Gol: " + g.getGol_fatti());
-            }
-        }
-    }
 }
