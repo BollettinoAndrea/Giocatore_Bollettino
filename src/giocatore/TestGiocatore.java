@@ -13,6 +13,19 @@ public class TestGiocatore {
         int gol_fatti;
         String nome;
         Boolean capitano;
+
+        Metodi.aggiuntaGiocatore("Victor Valdes", 0, false, indice++);
+        Metodi.aggiuntaGiocatore("Maxwell", 892, false, indice++);
+        Metodi.aggiuntaGiocatore("Carlos Puyol", 12, true, indice++);
+        Metodi.aggiuntaGiocatore("Gerard Pique", 20, false, indice++);
+        Metodi.aggiuntaGiocatore("Dani Alves", 892, false, indice++);
+        Metodi.aggiuntaGiocatore("Xavi", 892, false, indice++);
+        Metodi.aggiuntaGiocatore("Sergio Busquets", 892, false, indice++);
+        Metodi.aggiuntaGiocatore("Andre Iniesta", 892, false, indice++);
+        Metodi.aggiuntaGiocatore("Lionel Messi", 892, false, indice++);
+        Metodi.aggiuntaGiocatore("David Villa", 892, false, indice++);
+        Metodi.aggiuntaGiocatore("Pedro", 892, false, indice++);
+
         do {
             System.out.println("1 - Aggiungi un giocatore alla Squadra. ");
             System.out.println("2 - Visualizza i giocatori della Squadra. ");
